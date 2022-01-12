@@ -1,0 +1,4 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "livePreview.defaultPreviewPath": "/src/main/resources/templates/index.html"
+}

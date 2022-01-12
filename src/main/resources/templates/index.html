@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" xmlns:th="https://www.thymeleaf.org">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link href="/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="containter">  <!--container for Bootstrap-->
+
+    <div class="row mt-5 mb-2">
+      <div class="col">
+        <h1>Welcome. This is your Todo List</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+
+        <form action="/task" method="POST">
+          <input type="hidden" name="contents" data-th-value="${contents}">
+          <div class="mb-2 input-group">
+
+          <input type="text" name="taskName" id="taskName" placeholder="Enter a task" class="form-control" />
+          <!--
+              <label for="taskname">Enter today's task : </label>
+          -->
+      </div>
+      <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary" formmethod="POST" formaction="#">Add Task</button>
+        <button type="submit" class="btn btn-warning" formmethod="POST" formaction="#">Save Task</button>
+        </div>
+      </form>
+      
+      </div>  
+    </div>
+    <div class="row" data-th-if="${contents == null}">
+      <div class="col">
+        <h2 data-th-if="${contents == null}">You have no task at the moment.</h2>
+      </div>
+      </div>
+
+      <div class="row" data-th-if="${contents != null}">
+        <div class="col">
+          <h2>List of your task</h2>
+          <ul class="list-group">
+            <li data-th-each="t : ${tasks}" class="list-group-item">
+              <span data-th-text="${t}"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  
+</body>
+
+</html>
+
+<!--read the task name-->
+<!--read the contents-->
+<!--append the taskname to contents-->
+<!--set contents to model-->
+<!--we write the output-->
