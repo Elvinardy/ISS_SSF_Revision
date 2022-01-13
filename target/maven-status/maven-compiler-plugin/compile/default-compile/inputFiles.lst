@@ -1,3 +1,7 @@
+/Users/elvinardy_darwin/Downloads/TodoList_project/src/main/java/ssf/todoList/TodoList_project/Constants.java
 /Users/elvinardy_darwin/Downloads/TodoList_project/src/main/java/ssf/todoList/TodoList_project/controller/TodoController.java
 /Users/elvinardy_darwin/Downloads/TodoList_project/src/main/java/ssf/todoList/TodoList_project/model/TodoModel.java
+/Users/elvinardy_darwin/Downloads/TodoList_project/src/main/java/ssf/todoList/TodoList_project/repository/TaskRepo.java
 /Users/elvinardy_darwin/Downloads/TodoList_project/src/main/java/ssf/todoList/TodoList_project/TodoListProjectApplication.java
+/Users/elvinardy_darwin/Downloads/TodoList_project/src/main/java/ssf/todoList/TodoList_project/service/TaskService.java
+/Users/elvinardy_darwin/Downloads/TodoList_project/src/main/java/ssf/todoList/TodoList_project/config/RedisConfig.java

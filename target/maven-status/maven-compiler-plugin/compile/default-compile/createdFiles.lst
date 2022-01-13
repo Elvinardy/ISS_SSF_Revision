@@ -1,0 +1,6 @@
+ssf/todoList/TodoList_project/config/RedisConfig.class
+ssf/todoList/TodoList_project/service/TaskService.class
+ssf/todoList/TodoList_project/TodoListProjectApplication.class
+ssf/todoList/TodoList_project/Constants.class
+ssf/todoList/TodoList_project/repository/TaskRepo.class
+ssf/todoList/TodoList_project/controller/TodoController.class
