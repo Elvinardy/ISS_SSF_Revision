@@ -21,7 +21,7 @@ public class TaskService {
         return opt.isPresent();
     }
 
-    public List<String> get(String key) {
+    public List<String> get(String key) {       // get key from the list
         Optional<String> opt = taskRepo.get(key);
         List<String> list = new LinkedList<>();
         if(opt.isPresent()) {
@@ -44,7 +44,7 @@ public class TaskService {
         taskRepo.save(key, value);
     }
 
-    public boolean validateUser(String userId, String password) {
+/*     public boolean validateUser(String userId, String password) {
         return userId.equalsIgnoreCase("fred");
-    }
+    } */
 }

@@ -14,7 +14,6 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import ssf.todoList.TodoList_project.Constants;
 import ssf.todoList.TodoList_project.service.TaskService;
@@ -26,17 +25,18 @@ public class TodoController {
     private final static Logger logger = Logger.getLogger(TodoController.class.getName());
 
     @Autowired 
-    TaskService tasksvc;
-
+    TaskService tasksvc;        // injecting taskservice bean
+/* 
     @RequestMapping(value="/login", method = RequestMethod.GET)    // To add new login page to check user todo list is already present
     public String showLoginPage(Model model) {
 
         return "userlogin";
-    }
-
+    } */
+    // when requestmapping is used above, no need to include '/' at the Post mapping
     @PostMapping("save")
-    public String postTaskSave(@RequestBody MultiValueMap<String, String> form) {
-        String contents = form.getFirst("content");
+    // appropriate to use multivaluemap if theres alot of inputs from the form
+    public String postTaskSave(@RequestBody MultiValueMap<String, String> form) {  
+        String contents = form.getFirst("contents");
 
         logger.log(Level.INFO, "to be saved: %s".formatted(contents));
 
@@ -52,13 +52,14 @@ public class TodoController {
         String contents = todoList.getFirst("contents");
 
         logger.log(Level.INFO, "contents: '%s'".formatted(contents));
+        logger.log(Level.INFO, "task: '%s'".formatted(todo));
 
         // Split the contents into List, delimited by "|"
         List<String> taskList = new LinkedList<>();
         if((contents != null) && (contents.trim().length() > 0)) {
             // append new task to contents
             contents = "%s|%s".formatted(contents, todo);
-            taskList = Arrays.asList(contents.split("|"));
+            taskList = Arrays.asList(contents.split("\\|"));
 
         } else {
             contents = todo;

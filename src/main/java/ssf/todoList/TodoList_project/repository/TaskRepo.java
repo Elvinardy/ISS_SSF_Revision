@@ -18,11 +18,11 @@ public class TaskRepo {
     private RedisTemplate<String, String> template;
 
     public void save(String key, String value) {
-        template.opsForValue().set(key, value, 5, TimeUnit.MINUTES);
+        template.opsForValue().set(key, value, 5, TimeUnit.MINUTES);    // save the data in redis for 5minutes before being destroyed
 
     }
     public Optional<String> get(String key) {
-        return Optional.ofNullable(template.opsForValue().get(key));  // Getting the key
+        return Optional.ofNullable(template.opsForValue().get(key));  // Getting the key with possible of a null value
 
     }
 }

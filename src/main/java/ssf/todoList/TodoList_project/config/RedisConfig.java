@@ -18,7 +18,7 @@ import ssf.todoList.TodoList_project.Constants;
 public class RedisConfig {      
     private final static Logger logger = Logger.getLogger(RedisConfig.class.getName());
 
-    @Value("${spring.redis.host}")
+    @Value("${spring.redis.host}")      // Configure Redis Connection
     private String redisHost;
     @Value("${spring.redis.port}")
     private Integer redisPort;
@@ -38,7 +38,7 @@ public class RedisConfig {
         config.setPort(redisPort);
         config.setDatabase(redisDatabase);
 
-        final String redisPassword = System.getenv(Constants.REDIS_PASSWORD);
+        final String redisPassword = System.getenv(Constants.REDIS_PASSWORD);   // store password at environment variable
             if (redisPassword != null) {
                 logger.log(Level.INFO, "Setting Redis password");
                 config.setPassword(redisPassword);
